@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>WebCrawler</display-name>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>CrawlerCtl</servlet-name>
+		<servlet-class>com.sunrays.javarefbook.ctl.CrawlerCtl</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>AddURLCtl</servlet-name>
+		<servlet-class>com.sunrays.javarefbook.ctl.AddURLCtl</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>LoginCtl</servlet-name>
+		<servlet-class>com.sunrays.javarefbook.ctl.LoginCtl</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>UserRegCtl</servlet-name>
+		<servlet-class>com.sunrays.javarefbook.ctl.UserRegCtl</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>LogoutCtl</servlet-name>
+		<servlet-class>com.sunrays.javarefbook.ctl.LogoutCtl</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>URLListCtl</servlet-name>
+		<servlet-class>com.sunrays.javarefbook.ctl.URLListCtl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>CrawlerCtl</servlet-name>
+		<url-pattern>/CrawlerCtl</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>UserRegCtl</servlet-name>
+		<url-pattern>/UserRegCtl</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AddURLCtl</servlet-name>
+		<url-pattern>/AddURLCtl.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>LoginCtl</servlet-name>
+		<url-pattern>/LoginCtl</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>LogoutCtl</servlet-name>
+		<url-pattern>/LogoutCtl</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>URLListCtl</servlet-name>
+		<url-pattern>/URLListCtl.do</url-pattern>
+	</servlet-mapping>
+
+	<filter id="One">
+		<filter-name>LoginFilter</filter-name>
+		<filter-class>com.sunrays.javarefbook.frontController.LoginFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>LoginFilter</filter-name>
+		<url-pattern>*.do</url-pattern>
+	</filter-mapping>
+
+
+</web-app>
